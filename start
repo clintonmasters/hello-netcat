@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+echo [ ! ] FYI, running the following command:
+echo       docker build -t gcr.io/cloudrundemo17/hello-netcat hello-netcat
+
+echo FYI, running the following command:
+        docker push gcr.io/cloudrundemo17/hello-netcat
+
+docker push gcr.io/cloudrundemo17/hello-netcat
+
+echo <<EOF
+[ ! ] FYI, running the following command:
+        gcloud run deploy hello-netcat\
+          --project=cloudrundemo17\
+          --platform=managed\
+          --region=us-central1\
+          --image=gcr.io/cloudrundemo17/hello-netcat
+EOF
+
+        gcloud run deploy hello-netcat\
+          --project=cloudrundemo17\
+          --platform=managed\
+          --region=us-central1\
+          --image=gcr.io/cloudrundemo17/hello-netcat
