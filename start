@@ -3,6 +3,8 @@
 echo [ ! ] FYI, running the following command:
 echo       docker build -t gcr.io/cloudrundemo17/hello-netcat hello-netcat
 
+docker build -t gcr.io/cloudrundemo17/hello-netcat ../hello-netcat
+
 echo FYI, running the following command:
         docker push gcr.io/cloudrundemo17/hello-netcat
 
@@ -17,7 +19,7 @@ echo <<EOF
           --image=gcr.io/cloudrundemo17/hello-netcat
 EOF
 
-        gcloud run deploy hello-netcat\
+gcloud run deploy hello-netcat\
           --project=cloudrundemo17\
           --platform=managed\
           --region=us-central1\
